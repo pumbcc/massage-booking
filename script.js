@@ -1,6 +1,15 @@
 const THERAPISTS = ["พี่ประจักษ์", "พี่ประสิทธิ", "พี่สามารถ", "พี่วินัย", "พี่ไพบูลย์", "พี่วาสนา", "พี่สมศิริ", "พี่สัญญา"];
 const SLOTS = ["09.00 - 09.30 น.", "09.35 - 10.05 น.", "10.10 - 10.40 น.", "10.45 - 11.15 น.", "12.15 - 12.45 น.", "12.50 - 13.20 น.","13.25 - 13.55 น.", "14.00 - 14.30 น.", "14.35 - 15.05 น.", "15.05 - 15.35 น."];
-const THERAPIST_PHOTOS = { "พี่ประจักษ์": "https://img2.pic.in.th/LINE_NOTE_260303_5.jpg", "พี่ประสิทธิ": "https://img5.pic.in.th/file/secure-sv1/LINE_NOTE_260303_2.jpg", "พี่สามารถ": "https://img5.pic.in.th/file/secure-sv1/LINE_NOTE_260303_6.jpg", "พี่วินัย": "https://img5.pic.in.th/file/secure-sv1/LINE_NOTE_260303_8.jpg", "พี่ไพบูลย์": "https://img5.pic.in.th/file/secure-sv1/LINE_NOTE_260303_4.jpg", "พี่วาสนา": "https://img2.pic.in.th/LINE_NOTE_260303_1.jpg", "พี่สมศิริ": "https://img2.pic.in.th/LINE_NOTE_260303_3.jpg", "พี่สัญญา": "https://img2.pic.in.th/LINE_NOTE_260303_7.jpg" };
+const THERAPIST_PHOTOS = { 
+  "พี่ประจักษ์": "https://img2.pic.in.th/LINE_NOTE_260303_5.jpg", 
+  "พี่ประสิทธิ": "https://img2.pic.in.th/LINE_NOTE_260303_2.jpg", 
+  "พี่สามารถ": "https://img2.pic.in.th/LINE_NOTE_260303_6.jpg", 
+  "พี่วินัย": "https://img1.pic.in.th/images/LINE_NOTE_260303_8.jpg", 
+  "พี่ไพบูลย์": "https://img1.pic.in.th/images/LINE_NOTE_260303_4.jpg", 
+  "พี่วาสนา": "https://img2.pic.in.th/LINE_NOTE_260303_1.jpg", 
+  "พี่สมศิริ": "https://img2.pic.in.th/LINE_NOTE_260303_3.jpg", 
+  "พี่สัญญา": "https://img2.pic.in.th/LINE_NOTE_260303_7.jpg" 
+};
 const DEFAULT_PHOTO = "https://cdn-icons-png.flaticon.com/512/147/147144.png";
 
 // ดึงค่า Config ปลอดภัยจาก Vercel Injection หรือถ้าหาไม่เจอให้ระบุค่าตรงนี้ (ใส่ค่า Supabase พี่ปุ้มลงไปได้เลย)
