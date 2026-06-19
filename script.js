@@ -4,8 +4,8 @@ const THERAPIST_PHOTOS = { "พี่ประจักษ์": "https://img2.pi
 const DEFAULT_PHOTO = "https://cdn-icons-png.flaticon.com/512/147/147144.png";
 
 // ดึงค่า Config ปลอดภัยจาก Vercel Injection หรือถ้าหาไม่เจอให้ระบุค่าตรงนี้ (ใส่ค่า Supabase พี่ปุ้มลงไปได้เลย)
-const SUPABASE_URL = window.env?.SUPABASE_URL || "https://xxxxxx.supabase.co";
-const SUPABASE_KEY = window.env?.SUPABASE_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.xxxxxxx";
+const SUPABASE_URL = window.env?.SUPABASE_URL || "https://twxbqzeodmgdhakvbbkp.supabase.co";
+const SUPABASE_KEY = window.env?.SUPABASE_KEY || "sb_publishable_mV-sc5MOHye7sGeYbnA--w_vy1MT9Xy";
 const ADMIN_LIST = ["650900050", "650900222"]; 
 
 let currentUser = null, isFirstLoad = true, refreshInterval = null, lastRes = null;
