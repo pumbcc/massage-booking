@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ระบบจองคิวนวดผ่อนคลาย</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div id="loading" class="loading-overlay"><div class="spinner-border text-warning" role="status"></div></div>
+
+  <div id="loginSection" class="container login-container d-none">
+    <div class="card shadow-lg border-0">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-primary">ระบบจองคิวนวดผ่อนคลาย</h2>
+        <p class="text-muted small">เข้าสู่ระบบเพื่อจองช่วงเวลาผ่อนคลายของคุณ</p>
+      </div>
+      <div class="mb-4">
+        <input type="text" id="empId" class="form-control form-control-lg text-center shadow-sm" placeholder="ระบุรหัสพนักงาน" style="border-radius: 15px;">
+      </div>
+      <button onclick="handleLogin()" class="btn btn-primary btn-lg w-100 shadow-sm">เข้าสู่ระบบ</button>
+    </div>
+  </div>
+
+  <div id="mainSection" class="container-fluid py-4 d-none">
+    <div id="adminPanel" class="admin-controls d-none">
+      <h6 class="fw-bold mb-3">Admin Panel (Vercel Speed)</h6>
+      <div class="row g-2 align-items-end">
+        <div class="col-md-2">
+          <small class="fw-bold">ระบบจอง:</small>
+          <select id="sysToggle" class="form-select form-select-sm shadow-sm">
+            <option value="OPEN">เปิด (OPEN)</option>
+            <option value="CLOSED">ปิด (CLOSED)</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <small class="fw-bold">วันที่ทำงาน:</small>
+          <input type="date" id="adminActiveDate" class="form-control form-control-sm shadow-sm">
+        </div>
+        <div class="col-md-4">
+          <small class="fw-bold">หมอที่หยุดวันนี้:</small>
+          <select id="disabledTherapists" class="form-control form-control-sm" multiple="multiple" style="width: 100%"></select>
+        </div>
+        <div class="col-md-1">
+          <button class="btn btn-primary btn-sm w-100 fw-bold shadow-sm" onclick="updateAdminUI()">ตั้งค่า</button>
+        </div>
+        <div class="col-md-2">
+          <input type="text" id="adminTargetEmp" class="form-control form-control-sm shadow-sm" placeholder="ใส่รหัสเพื่อจองแทน">
+        </div>
+        <div class="col-md-1">
+          <button class="btn btn-danger btn-sm w-100 fw-bold shadow-sm" onclick="adminClearAll()">ล้าง</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="closedMessage" class="system-closed-banner d-none">ขณะนี้ระบบปิดรับจองชั่วคราว กรุณารอประกาศจากแอดมิน</div>
+
+    <div class="header-info d-flex justify-content-between align-items-center mb-4 px-4 bg-white p-3 rounded-4 shadow-sm border-start border-5 border-warning">
+      <h3 class="fw-bold mb-0 text-dark">ตารางจองนวด</h3>
+      <div class="text-end">
+        <span id="userNameDisp" class="fw-bold text-primary fs-5"></span><br>
+        <button onclick="handleLogout()" class="btn btn-sm btn-outline-danger mt-1 border-0">ออกจากระบบ</button>
+      </div>
+    </div>
+    
+    <div class="table-container shadow-sm">
+      <table class="table table-bordered align-middle mb-0 text-center">
+        <thead id="tableHead"></thead>
+        <tbody id="bookingBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="script.js"></script>
+</body>
+</html>
